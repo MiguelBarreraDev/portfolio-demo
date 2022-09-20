@@ -1,0 +1,16 @@
+.container-biography {
+	position: relative;
+	width: 100%;
+	max-width: var(--x-limit);
+	padding: 0 15px;
+	display: flex;
+	flex-direction: column;
+}
+
+@media only screen and (min-width: 900px) {
+	.container-biography {
+		flex-direction: row;
+		align-items: center;
+		height: 700px;
+	}
+}

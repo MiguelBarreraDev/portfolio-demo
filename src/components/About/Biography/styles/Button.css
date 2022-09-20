@@ -1,0 +1,81 @@
+.container-biography .biography .btn_view-cv {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	margin: 0 auto;
+	margin-top: 2em;
+	text-align: center;
+}
+.container-biography .biography .btn_view-cv a {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	position: relative;
+	background-color: var(--cl-primary);
+	width: 180px;
+	padding: .5em 0;
+	transition: all .3s linear;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: bold;
+}
+.container-biography .biography .btn_view-cv a span {
+	display: block;
+	position: relative;
+	z-index: 1000;
+}
+.container-biography .biography .btn_view-cv a span:last-child {
+	/* position: absolute; */
+	right: -.5em;
+	display: flex;
+	align-items: center;
+	/* padding: 0 1em; */
+}
+.container-biography .biography .btn_view-cv a span:last-child svg {
+	transform: rotate(-90deg);
+	font-size: 2em;
+}
+.container-biography .biography .btn_view-cv a::after {
+	content: "";
+	position: absolute;
+	top:0;
+	left:0;
+	width: 0;
+	height: 100%;
+	background-color: #0005;
+	transition: all .3s linear;
+}
+.container-biography .biography .btn_view-cv a::before {
+	content: "";
+	position: absolute;
+	top:0;
+	right: 0;
+	width: 0;
+	height: 100%;
+	background-color: #0005;
+	transition: all .3s linear;
+}
+.container-biography .biography .btn_view-cv a:hover::after,
+.container-biography .biography .btn_view-cv a:hover::before {
+	width: 50%;
+}
+.container-biography .biography .btn_view-cv a:hover span:last-child {
+	transition: all .3s linear;
+	transform: translate(80%);
+}
+.container-biography .biography .btn_view-cv a:hover {
+	transform: translateY(-5px);
+}
+@media only screen and (min-width: 600px) {
+	.container-biography .biography .btn_view-cv {
+		justify-content: center;
+	}
+}
+@media only screen and (min-width: 900px) {
+	.container-biography .biography .btn_view-cv {
+		justify-content: flex-start;
+		max-width: 40ch;
+		width: 100%;
+	}
+}

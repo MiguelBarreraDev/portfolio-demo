@@ -1,0 +1,42 @@
+.action-button {
+	position: relative;
+	width: 100%;
+	padding: .5em 1em;
+	text-align: center;
+	background-color: transparent;
+	overflow: hidden;
+}
+
+.action-button.outlined {
+	border: 1px solid var(--cl-primary);
+}
+.action-button.filled {
+	border: 1px solid var(--cl-primary);
+	background-color: var(--cl-primary);
+}
+/* 1 style */
+.action-button.animation-filled-to-outlined {
+	transition: all .3s ease-in-out;
+	background-color: transparent;
+	box-shadow: 0 0 40px 40px var(--cl-primary) inset;
+}
+.action-button.animation-filled-to-outlined:hover {
+	box-shadow: 0 0 10px 0 var(--cl-primary) inset, 0 0 10px 4px var(--cl-primary);
+}
+/* 2 style */
+.action-button.brightness::after {
+	background: #fff;
+	position: absolute;
+	content: "";
+	height: 155px;
+	top: -50px;
+	left: -125px;
+	opacity: .3;
+	transition: all .5s cubic-bezier(0.19, 1, 0.22, 1);
+	transform: rotate(35deg);
+	width: 75px;
+}
+.action-button.brightness:hover::after {
+	transition: all .5s cubic-bezier(0.19, 1, 0.22, 1);
+	left: 120%;
+}

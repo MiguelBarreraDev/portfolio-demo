@@ -1,0 +1,28 @@
+.home .image {
+	position: relative;
+	justify-self: center;
+	height: fit-content;
+}
+.home .image svg {
+	display: block;
+	margin: 0 auto;
+	width: min(70%, 200px);
+	height: fit-content;
+}
+@media only screen and (min-width: 390px) {
+	.home .image svg {
+		width: min(70%, 300px);
+	}
+}
+@media only screen and (min-width: 900px) {
+	.home .image {
+		align-self: center;
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+	}
+	.home .image svg {
+		margin: 0;
+		width: min(100%, 300px);
+	}
+}

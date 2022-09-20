@@ -1,0 +1,18 @@
+.footer .container_social-networks {
+	display: flex;
+	flex-direction: column;
+	gap: .5em;
+}
+.footer .container_social-networks a {
+	text-decoration: underline;
+	color: #AAA;
+}
+.footer .container_social-networks a:hover {
+	color: var(--text-primary);
+}
+@media only screen and (min-width: 600px) {
+	.footer .container_social-networks {
+		flex-direction: row;
+		gap: 2em;
+	}
+}

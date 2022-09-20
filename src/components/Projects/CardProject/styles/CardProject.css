@@ -1,0 +1,22 @@
+.card-project {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	min-height: 480px;
+	opacity: 0;
+}
+.card-project.rtl {
+	flex-direction: column-reverse;
+}
+@media only screen and (min-width: 300px) {
+	.card-project {
+		min-height: 500px;
+	}
+}
+@media only screen and (min-width: 700px) {
+	.card-project.rtl, .card-project.ltr {
+		flex-direction: row;
+		min-height: 400px;
+		max-height: 400px;
+	}
+}

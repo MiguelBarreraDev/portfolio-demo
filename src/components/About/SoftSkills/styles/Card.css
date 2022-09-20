@@ -1,0 +1,47 @@
+.soft-skills .item {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	max-width: 400px;
+	background-color: var(--cl-primary);
+	overflow: hidden;
+	box-shadow: 7px 7px 10px #0003;
+	opacity: 0;
+}
+.soft-skills .item .icon {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--bg-light);
+	aspect-ratio: 1/1;
+	width: 70px;
+	font-size: 2em;
+}
+.soft-skills .item .icon svg {
+	color: var(--cl-primary);
+	font-size: 1.5em;
+}
+.soft-skills .item p {
+	flex: 1;
+	font-size: 1.2em;
+	padding-left: 1em;
+}
+@media only screen and (min-width: 700px) {
+	.soft-skills .item {
+		flex-direction: column;
+		margin: 0 .5em;
+		max-width: 240px;
+		aspect-ratio: 1/1;
+	}
+	.soft-skills .item .icon {
+		aspect-ratio: 1/1;
+		width: 100%;
+	}
+	.soft-skills .item .icon svg {
+		font-size: 2.5em;
+	}
+	.soft-skills .item p {
+		text-align: center;
+		padding: .5em 0;
+	}
+}

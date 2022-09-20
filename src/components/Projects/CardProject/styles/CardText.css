@@ -1,0 +1,7 @@
+.card-project .body h4 {
+	font-size: min(max(5vw, 1.2em), 1.5em);
+}
+.card-project .body p {
+	font-size: 1em;
+	font-size: min(max(5vw, .8em), 1em);
+}

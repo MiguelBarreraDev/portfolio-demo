@@ -1,0 +1,18 @@
+.container-title {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5em;
+	text-align: center;
+}
+.container-title .title {
+	font-family: var(--font-secondary);
+	color: var(--cl-tertiary);
+	font-size: 1em;
+	text-transform: uppercase;
+	font-weight: lighter;
+}
+.container-title .subtitle {
+	font-family: var(--font-secondary);
+	color: var(--cl-tertiary);
+	font-size: 2em;
+}

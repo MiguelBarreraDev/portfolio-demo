@@ -1,0 +1,16 @@
+.contact-body {
+	flex: 1;
+	width: 100%;
+	max-width: var(--x-limit);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	padding: 2em 15px;
+	gap: 3em;
+}
+@media only screen and (min-width: 500px) {
+	.contact-body {
+		justify-content: flex-start;
+	}
+}

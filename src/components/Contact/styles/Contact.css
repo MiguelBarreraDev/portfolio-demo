@@ -1,0 +1,12 @@
+.contact {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	min-height: 100vh;
+	background-color: var(--bg-contact);
+	padding-top: clamp(1em, 10vw, 2em);
+}
+.contact .footer {
+	width: 100%;
+}

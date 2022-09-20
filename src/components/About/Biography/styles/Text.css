@@ -1,0 +1,27 @@
+.container-biography .biography .text {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	gap: 1.5em;
+	width: 100%;
+}
+.container-biography .biography .text p {
+	font-size: 1.2em;
+}
+@media only screen and (min-width: 600px) {
+	.container-biography .biography .text {
+		text-align: center;
+		gap: 2.5em;
+	}
+	.container-biography .biography .text p {
+		font-size: 1.2em;
+		max-width: 50ch;
+	}
+}
+@media only screen and (min-width: 900px) {
+	.container-biography .biography .text {
+		text-align: left;
+		max-width: 40ch;
+	}
+}

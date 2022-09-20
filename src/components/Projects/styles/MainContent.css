@@ -1,0 +1,13 @@
+.container-projects {
+	display: flex;
+	flex-direction: column;
+	gap: 2em;
+	width: 100%;
+	max-width: var(--x-limit);
+	padding: 0 15px;
+}
+@media only screen and (min-width: 700px) {
+	.container-projects {
+		gap: 3em;
+	}
+}

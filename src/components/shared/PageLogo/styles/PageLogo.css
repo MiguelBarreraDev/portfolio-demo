@@ -1,0 +1,14 @@
+.logo {
+	font-family: var(--font-secondary);
+	font-size: 1.8em;
+	width: 112px;
+}
+.logo span {
+	display: inline-block;
+	font-size: min(min(10vw, .9em), 1em);
+}
+.logo span:first-child {
+	padding: 0 .1em;
+	margin-right: .1em;
+	background-color: var(--cl-primary);
+}

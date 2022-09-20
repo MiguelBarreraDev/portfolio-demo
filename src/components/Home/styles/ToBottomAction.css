@@ -1,0 +1,42 @@
+.container_to-bottom-action {
+	position: absolute;
+	color: #FFDDB6;
+	z-index: 200;
+	width: fit-content;
+	height: fit-content;
+	bottom: .5em;
+}
+.container_to-bottom-action a {
+	font-family: var(--font-secondary);
+	color: var(--cl-tertiary);
+}
+.container_to-bottom-action a:hover svg{
+	transition: all .3s linear;
+	transform: scale(1);
+	animation: ToBottom .5s linear infinite alternate;
+}
+@keyframes ToBottom {
+	0% {
+		transform: translateY(5px);
+	}
+	100% {
+		transform: translateY(0);
+	}
+}
+.container_to-bottom-action a::after {
+	content: "My work";
+	position: absolute;
+	white-space: nowrap;
+	top: -2em;
+	left: -1em;
+	right: 0;
+	margin: 0 auto;
+	padding-bottom: 4em;
+	cursor: pointer;
+}
+.container_to-bottom-action a svg {
+	cursor: pointer;
+	font-size: 2em;
+	transform: scale(1.2);
+	font-weight: lighter;
+}

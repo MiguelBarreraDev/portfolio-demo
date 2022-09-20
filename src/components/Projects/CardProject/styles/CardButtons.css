@@ -1,0 +1,16 @@
+.card-project .body .container-buttons {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	align-items: flex-end;
+	width: 100%;
+	gap: .5em;
+}
+@media only screen and (min-width: 390px) {
+	.card-project .body .container-buttons {
+		flex-direction: row;
+	}
+}
+.card-project .body .container-buttons a {
+	flex: 1;
+}

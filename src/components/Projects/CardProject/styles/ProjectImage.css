@@ -1,0 +1,23 @@
+.card-project .image {
+	overflow: hidden;
+	background-color: var(--bg-light);
+	padding: 1em;
+	padding-bottom: 0;
+	max-height: 300px;
+}
+.card-project .image img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+@media only screen and (min-width: 700px) {
+	.card-project .image {
+		flex: 1;
+		padding-bottom: 1em;
+		max-height: none;
+	}
+	.card-project .image.project-management img {
+		object-position: left;
+	}
+}
