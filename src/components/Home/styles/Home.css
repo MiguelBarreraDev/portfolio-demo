@@ -1,15 +1,12 @@
 .home {
 	position: relative;
 	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: space-between;
+	place-content: center;
 	padding: 6em 0;
-	padding-bottom: 0;
+	padding-bottom: 4em;
 	min-height: 100vh;
 	font-size: 16px;
 	z-index: 100;
-	background-color: #f55;
 }
 @media only screen and (min-width: 600px) {
 	.home {
@@ -18,6 +15,7 @@
 }
 @media only screen and (min-width: 900px) {
 	.home {
+		align-items: center;
 		padding: 0;
 	}
 }

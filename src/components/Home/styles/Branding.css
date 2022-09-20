@@ -24,7 +24,6 @@
 @media only screen and (min-width: 900px) {
 	.branding {
 		text-align: left;
-		align-self: flex-end;
 	}
 	.branding h1 {
 		font-size: min(max(11vw, 2em), 4em);

@@ -1,34 +1,28 @@
 .main-content {
-	flex: 1;
 	max-width: var(--x-limit);
 	padding: 0 15px;
-	background-color: #54d;
 }
 .grid-container {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-template-rows: auto auto auto;
+	align-content: space-between;
 }
 .grid-item.branding {
 	grid-column: 1/-1;
-	background-color: #78f;
 }
 .grid-item.image {
 	grid-row: 2/3;
 	grid-column: 1/-1;
-	background-color: #a78;
 }
 .grid-item.call-action-button {
 	grid-row: 3/4;
 	grid-column: 1/-1;
-	background-color: #d45;
 }
 @media only screen and (min-width: 900px) {
 	.grid-container {
 		grid-template-columns: 1fr 1fr 1fr;
 		grid-template-rows: auto auto;
-		justify-content: center;
-		align-content: center;
 		row-gap: 2em;
 		column-gap: 1em;
 	}
