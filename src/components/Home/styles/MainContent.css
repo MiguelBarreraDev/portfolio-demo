@@ -2,6 +2,7 @@
 	flex: 1;
 	max-width: var(--x-limit);
 	padding: 0 15px;
+	background-color: #54d;
 }
 .grid-container {
 	display: grid;
