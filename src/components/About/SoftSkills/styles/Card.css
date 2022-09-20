@@ -1,8 +1,9 @@
 .soft-skills .item {
+	flex: 1;
 	display: flex;
 	align-items: center;
 	width: 100%;
-	max-width: 400px;
+	min-width: 240px;
 	background-color: var(--cl-primary);
 	overflow: hidden;
 	box-shadow: 7px 7px 10px #0003;
@@ -24,12 +25,12 @@
 .soft-skills .item p {
 	flex: 1;
 	font-size: 1.2em;
-	padding-left: 1em;
+	padding: 0 min(max(2vw, .5em), 1em);
 }
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 750px) {
 	.soft-skills .item {
 		flex-direction: column;
-		margin: 0 .5em;
+		min-width: 0;
 		max-width: 240px;
 		aspect-ratio: 1/1;
 	}
@@ -42,6 +43,6 @@
 	}
 	.soft-skills .item p {
 		text-align: center;
-		padding: .5em 0;
+		padding: .5em .5em;
 	}
 }
