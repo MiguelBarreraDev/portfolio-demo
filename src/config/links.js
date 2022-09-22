@@ -34,7 +34,7 @@ export const socialNetworksLinks = {
     name: 'Instagram',
     key: 'instagram',
     description: 'Connect with me',
-    to: '#',
+    to: 'https://www.instagram.com/soymigue23',
   },
   LINKEDIN: {
     name: 'Linkedin',
