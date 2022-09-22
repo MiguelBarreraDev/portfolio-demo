@@ -19,6 +19,7 @@
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	font-weight: bold;
+	cursor: pointer;
 }
 .container-biography .biography .btn_view-cv a span {
 	display: block;

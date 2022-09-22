@@ -5,7 +5,7 @@ import CVDocument from '@/assets/documents/CVMiguelBarreraPalomares.pdf'
 export default function ButtonViewCV () {
   return (
     <div className="btn_view-cv">
-      <a href='#' onClick={() => open(CVDocument)} target='_blank'>
+      <a onClick={() => open(CVDocument)} target='_blank'>
         <span>View CV</span>
         <span>
           <ToBottomIcon />
