@@ -31,7 +31,7 @@ export default function GetInTouch () {
       </div>
       <div className="container-button">
         <ActionButton
-          href={socialNetworksLinks.LINKEDIN}
+          href={socialNetworksLinks.LINKEDIN.to}
           label='Say Hello'
           addStyles='brightness'
         />
