@@ -6,9 +6,9 @@ import { useGlobalMedia } from "@/hooks"
 import PageLogo from "../shared/PageLogo/PageLogo"
 
 export default function Header () {
-  const [openMenu, setOpenMenu] = useState(false)
-  const [showHeader, setShowHeader] = useState(true)
-  const [showLine, setShowLine] = useState(false)
+  const [ openMenu, setOpenMenu ] = useState(false)
+  const [ showHeader, setShowHeader ] = useState(true)
+  const [ showLine, setShowLine ] = useState(false)
   const { matches } = useGlobalMedia()
 
   const handleMenu = useCallback(() => setOpenMenu(cs => !cs), [])
