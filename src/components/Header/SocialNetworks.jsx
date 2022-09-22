@@ -8,20 +8,18 @@ export default function SocialNetworks () {
       <a
         href={socialNetworksLinks.GITHUB.to}
         target="_blank"
-        className="link-github"
       >
         <GitHubIcon />
       </a>
       <a
         href={socialNetworksLinks.INSTAGRAM.to}
-        className="link-instagram"
+        target="_blank"
       >
         <InstagramIcon />
       </a>
       <a
         href={socialNetworksLinks.LINKEDIN.to}
         target="_blank"
-        className="link-linkedin"
       >
         <LinkedinIcon />
       </a>
