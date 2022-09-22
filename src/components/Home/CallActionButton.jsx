@@ -19,7 +19,7 @@ export default function CallActionButton () {
   return (
     <div className='call-action-button grid-item' ref={ref}>
       <ActionButton
-        href={socialNetworksLinks.LINKEDIN}
+        href={socialNetworksLinks.LINKEDIN.to}
         label='Work together'
         addStyles='btn_work-together brightness filled'
       />
