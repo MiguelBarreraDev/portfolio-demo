@@ -5,6 +5,17 @@ import MenuButton from "./MenuButton"
 import { useGlobalMedia } from "@/hooks"
 import PageLogo from "../shared/PageLogo/PageLogo"
 
+function DelayUnmounting ({ isMounted, delayTime, children }) {
+  const [render, setRender] = useState(isMounted)
+  useEffect(() => {
+    if (isMounted)
+      setRender(isMounted)
+    else
+      setTimeout(()=> setRender(isMounted), delayTime)
+  }, [isMounted])
+  return render ? children : null
+}
+
 export default function Header () {
   const [ openMenu, setOpenMenu ] = useState(false)
   const [ showHeader, setShowHeader ] = useState(true)
@@ -17,7 +28,7 @@ export default function Header () {
     const body = document.querySelector('body')
     openMenu
       ? body.classList.add('overflow-hidden')
-      : body.classList.remove('overflow-hidden')
+      : setTimeout(() => body.classList.remove('overflow-hidden'), 1000)
   }, [openMenu])
 
   useEffect(() => {
@@ -54,7 +65,11 @@ export default function Header () {
       <div className="container">
         <PageLogo />
         {matches.medium && <Nav />}
-        {matches.small && openMenu && <Nav open={openMenu} handle={handleMenu}/>}
+        {matches.small && (
+          <DelayUnmounting isMounted={openMenu} delayTime={1000}>
+            <Nav open={openMenu} handle={handleMenu}/>
+          </DelayUnmounting>
+        )}
         {matches.small && <MenuButton variant="open" handle={handleMenu}/>}
       </div>
     </header>

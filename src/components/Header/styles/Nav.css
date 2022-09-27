@@ -11,9 +11,9 @@
 	background-color: var(--cl-secondary);
 	background-color: #101010;
 	padding: 1.5em 0;
-	animation: CirclePath 1s ease-in-out;
+	animation: CirclePathOpen 1s ease-in-out;
 }
-@keyframes CirclePath {
+@keyframes CirclePathOpen {
 	from {
 		clip-path: circle(0 at 100% 0);
 	}
@@ -21,14 +21,26 @@
 		clip-path: circle(200%);
 	}
 }
+.container-nav.remove {
+	animation: CirclePathClose 1s ease-in-out forwards;
+}
+@keyframes CirclePathClose {
+	from {
+		clip-path: circle(200%);
+	}
+	to {
+		clip-path: circle(0 at 100% 0);
+	}
+}
 .container-nav .nav {
 	display: flex;
+	align-items: center;
 	flex-direction: column;
 	justify-content: center;
 }
 .nav a {
 	position: relative;
-	width: 100%;
+	width: fit-content;
 	color: #aaa;
 	cursor: pointer;
 	text-align: left;
@@ -37,9 +49,11 @@
 	font-weight: bolder;
 	text-transform: uppercase;
 	transition: all .3s linear;
+	z-index: 1000;
+	overflow: hidden;
 }
 .nav a:hover {
-	color: #ccc;
+	color: var(--text-primary);
 }
 .nav a::before {
 	content: "";
@@ -49,22 +63,36 @@
 	right: 0;
 	width: 0;
 	height: 100%;
-	border-bottom: 2px solid var(--cl-primary);
+	background: var(--cl-primary);
 	transition: all .3s ease-in-out;
+	color: transparent;
+	z-index: -1;
 }
 .nav a:hover::before {
 	content: "";
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 100%;
+	width: 0;
 	height: 100%;
-	border-bottom: 2px solid var(--cl-primary);
+	animation: Sweep .5s cubic-bezier(.39,.17,.91,.71) forwards;
 }
-
+@keyframes Sweep {
+	0% {
+		width: 0%;
+		transform: translateX(0);
+	}
+	50% {
+		width: 100%;
+		transform: translateX(50%);
+	}
+	100% {
+		width: 0;
+		transform: translateX(200px);
+	}
+}
 .nav a.active {
-	border-radius: 50px;
-	color: var(--text-primary);
+	color: #FFF;
 }
 
 @media only screen and (min-width: 600px) {
@@ -87,6 +115,7 @@
 		margin: 0 .5em;
 		width: 90px;
 		transform: none;
+		padding: .2em 0;
 	}
 	.nav a:last-child {
 		margin-right: 0;

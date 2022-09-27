@@ -6,10 +6,11 @@
 	border: none;
 	cursor: pointer;
 }
-.menu-button .button:hover svg {
-	color: var(--cl-primary);
-}
 .menu-button .button svg {
 	font-size: 3em;
 	color: var(--cl-btn-menu);
+}
+.menu-button .button:hover > svg {
+	transition: all .3s ease-in;
+	color: var(--cl-primary);
 }
