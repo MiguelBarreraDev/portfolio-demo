@@ -50,7 +50,7 @@ export default function Header () {
   }, [])
 
   return (
-    <header className={`header ${!showHeader && 'hidden-header'} ${showLine && 'show-line'}`}>
+    <header className={`header ${!showHeader && !openMenu && 'hidden-header'} ${showLine && 'show-line'}`}>
       <div className="container">
         <PageLogo />
         {matches.medium && <Nav />}
