@@ -11,22 +11,32 @@
 	background-color: var(--cl-secondary);
 	background-color: #101010;
 	padding: 1.5em 0;
+	animation: CirclePath 1s ease-in-out;
+}
+@keyframes CirclePath {
+	from {
+		clip-path: circle(0 at 100% 0);
+	}
+	to {
+		clip-path: circle(200%);
+	}
 }
 .container-nav .nav {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	align-items: center;
 }
 .nav a {
-	color: #aaa;
 	position: relative;
+	width: 100%;
+	color: #aaa;
 	cursor: pointer;
-	text-align: center;
+	text-align: left;
 	margin: .2em 0;
 	font-size: 2.5em;
 	font-weight: bolder;
 	text-transform: uppercase;
+	transition: all .3s linear;
 }
 .nav a:hover {
 	color: #ccc;
@@ -37,11 +47,10 @@
 	top: 0;
 	left: 0;
 	right: 0;
-	margin: 0 auto;
 	width: 0;
 	height: 100%;
 	border-bottom: 2px solid var(--cl-primary);
-	transition: width .3s ease-in-out;
+	transition: all .3s ease-in-out;
 }
 .nav a:hover::before {
 	content: "";
@@ -66,14 +75,18 @@
 		flex-direction: row;
 		height: 100%;
 		background-color: transparent;
+		animation: none;
 	}
 	.container-nav .nav {
 		flex-direction: row;
+		perspective: none;
 	}
 	.nav a {
+		text-align: center;
 		font-size: .8em;
 		margin: 0 .5em;
 		width: 90px;
+		transform: none;
 	}
 	.nav a:last-child {
 		margin-right: 0;
