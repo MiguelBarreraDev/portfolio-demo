@@ -18,7 +18,7 @@
 	position: relative;
 	width: fit-content;
 	z-index: 3;
-	background-color: var(--cl-secondary);
+	background-color: var(--bg);
 	font-family: var(--font-secondary)
 }
 .footer .container_logo .logo-icon .logo span {

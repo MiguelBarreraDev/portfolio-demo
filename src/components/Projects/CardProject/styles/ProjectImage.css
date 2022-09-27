@@ -1,6 +1,5 @@
 .card-project .image {
 	overflow: hidden;
-	background-color: var(--bg-light);
 	padding: 1em;
 	padding-bottom: 0;
 	max-height: 300px;

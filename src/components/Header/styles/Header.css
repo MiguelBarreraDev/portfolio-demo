@@ -5,7 +5,7 @@
 	left: 0;
 	right: 0;
 	height: fit-content;
-	background-color: var(--cl-secondary);
+	background-color: var(--bg);
 	font-family: var(--font-primary);
 	padding: 10px 15px;
 	font-size: 16px;
