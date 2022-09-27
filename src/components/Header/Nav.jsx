@@ -25,8 +25,9 @@ export default function Nav ({ open, handle }) {
   const getSmoothLink = ({ to, key, name, handle }) => (
     <SmoothLink key={key} to={to} handle={handle}>{name}</SmoothLink>
   )
+
   return (
-    <div className={`container-nav ${!open && 'remove'}`}>
+    <div className={`container-nav ${open !== undefined && !open && 'remove'}`}>
       <DelayUnmounting isMounted={open} delayTime={1000}>
         <MenuButton variant='close' handle={handle}/>
       </DelayUnmounting>
