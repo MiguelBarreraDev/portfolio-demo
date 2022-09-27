@@ -6,7 +6,7 @@
 	position: relative;
 	padding-top: calc(115px + 2em);
 	padding-bottom: 2em;
-	background-color: var(--bg-light);
+	background-color: var(--cl-secondary-light);
 	z-index: 1;
 	gap: 2em;
 	padding-left: 15px;
@@ -19,7 +19,6 @@
 		padding-left: calc(115px + 2em);
 		padding-top: 2em;
 		flex: 1;
-		background-color: var(--bg-light);
 		height: 100%;
 		justify-content: center;
 	}

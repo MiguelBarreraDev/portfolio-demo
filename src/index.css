@@ -18,8 +18,9 @@
   --cl-primary-body: 137, 82, 255;
   --cl-primary-light-body: 179, 143, 255;
   --cl-secondary-body: 32, 32, 32;
+  --cl-secondary-light-body: 39, 39, 39;
   --cl-tertiary-body: 255, 221, 182;
-  --bg-body: 39, 39, 39;
+  --bg-body: 16, 16, 16;
   --bg-light-body: 48, 48, 48;
   --bg-contact-body: 47, 46, 65;
   --text-primary-body: 255, 255, 255;
@@ -29,6 +30,7 @@
   --cl-primary: rgb(var(--cl-primary-body));
   --cl-primary-light: rgb(var(--cl-primary-light-body));
   --cl-secondary: rgb(var(--cl-secondary-body));
+  --cl-secondary-light: rgb(var(--cl-secondary-light-body));
   --cl-tertiary: rgb(var(--cl-tertiary-body));
   --bg: rgb(var(--bg-body));
   --bg-light: rgb(var(--bg-light-body));
@@ -58,7 +60,7 @@ h1, h2, h3, h4, h5, h6, p, span {
 }
 
 body {
-  background-color: var(--cl-secondary);
+  background-color: var(--bg);
   overflow-x: hidden;
 }
 

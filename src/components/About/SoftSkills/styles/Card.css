@@ -13,7 +13,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: var(--bg-light);
+	background-color: var(--cl-secondary);
 	aspect-ratio: 1/1;
 	width: 70px;
 	font-size: 2em;

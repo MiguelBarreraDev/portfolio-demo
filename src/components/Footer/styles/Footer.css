@@ -1,5 +1,5 @@
 .footer {
-	background-color: var(--cl-secondary);
+	background-color: var(--bg);
 }
 .container-content {
 	max-width: var(--x-limit);

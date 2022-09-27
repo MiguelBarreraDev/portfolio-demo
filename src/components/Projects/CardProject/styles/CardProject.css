@@ -4,6 +4,7 @@
 	width: 100%;
 	min-height: 480px;
 	opacity: 0;
+	background-color: var(--cl-secondary);
 }
 .card-project.rtl {
 	flex-direction: column-reverse;
