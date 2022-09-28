@@ -1,76 +1,55 @@
-import { useEffect, useState, useCallback } from "react"
+import { useEffect, useState } from "react"
 import './styles/Header.css'
 import Nav from "./Nav"
 import MenuButton from "./MenuButton"
-import { useGlobalMedia } from "@/hooks"
 import PageLogo from "../shared/PageLogo/PageLogo"
-
-function DelayUnmounting ({ isMounted, delayTime, children }) {
-  const [render, setRender] = useState(isMounted)
-  useEffect(() => {
-    if (isMounted)
-      setRender(isMounted)
-    else
-      setTimeout(()=> setRender(isMounted), delayTime)
-  }, [isMounted])
-  return render ? children : null
-}
+import { DelayUnmounting } from "../shared"
+import { useVisibleScroll, useVisibleHeader } from "./hooks"
+import { useGlobalMedia } from "@/hooks"
 
 export default function Header () {
-  const [ openMenu, setOpenMenu ] = useState(false)
+  const [ openMenu, setOpenMenu ] = useState(undefined)
   const [ showHeader, setShowHeader ] = useState(true)
   const [ showLine, setShowLine ] = useState(false)
   const { matches } = useGlobalMedia()
 
-  const handleMenu = useCallback(() => setOpenMenu(cs => !cs), [])
+  const handleOpenMenu = ({ value=null }) => setOpenMenu(cs => value?? !cs)
 
-  useEffect(() => {
-    const body = document.querySelector('body')
-    openMenu
-      ? body.classList.add('overflow-hidden')
-      : setTimeout(() => body.classList.remove('overflow-hidden'), 1000)
-  }, [openMenu])
+  useVisibleScroll({ isVisible: !openMenu, delayEntry: 1000 })
 
   useEffect(() => {
     window
       .matchMedia('(min-width: 600px)')
-      .addEventListener('change', (e) => e.matches && setOpenMenu(false))
+      .addEventListener('change', e => {
+        e.matches && handleOpenMenu({ value: false })
+      })
   }, [])
 
-  // TODO: REFACTOR
   useEffect(() => {
-    let oldValue = 0, newValue = 0;
-    window.addEventListener('scroll', () => {
-      newValue = window.scrollY
-      if (newValue < oldValue) {
-        setShowHeader(true)
-      } else {
-        setShowHeader(false)
-        setShowLine(false)
-      }
-      if (newValue < 30){
-        setShowLine(false)
-        return
-      }
-      else{
-        setShowLine(true)
-        newValue > oldValue && setShowLine(false)
-      }
-      oldValue = newValue
-    })
-  }, [])
+    console.log({openMenu})
+  }, [openMenu])
+  useVisibleHeader({ setShowHeader, setShowLine })
 
+  const visibleHeader = !showHeader && !openMenu && 'hidden-header'
   return (
-    <header className={`header ${!showHeader && !openMenu && 'hidden-header'} ${showLine && 'show-line'}`}>
+    <header
+      className={`header ${visibleHeader} ${showLine && 'show-line'}`}
+    >
       <div className="container">
         <PageLogo />
-        {matches.medium && <Nav />}
-        {matches.small && (
+        {matches.small ? (
           <DelayUnmounting isMounted={openMenu} delayTime={1000}>
-            <Nav open={openMenu} handle={handleMenu}/>
+            <Nav variant="dynamic" open={openMenu} handle={handleOpenMenu} />
           </DelayUnmounting>
+        ) : (
+          <Nav variant="static"/>
         )}
-        {matches.small && <MenuButton variant="open" handle={handleMenu}/>}
+        {matches.small && (
+          <MenuButton
+            variant={openMenu ? 'close' : 'open'}
+            handle={handleOpenMenu}
+          />
+        )}
       </div>
     </header>
   )

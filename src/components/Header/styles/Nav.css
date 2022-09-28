@@ -5,23 +5,24 @@
 	top: 0;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
+	justify-content: space-around;
 	align-items: center;
 	height: 100vh;
 	background-color: var(--cl-secondary);
-	background-color: #101010;
-	padding: 1.5em 0;
+	padding: 0 15px;
+}
+.container-nav.open {
 	animation: CirclePathOpen 1s ease-in-out;
 }
 @keyframes CirclePathOpen {
 	from {
-		clip-path: circle(0 at 100% 0);
+		clip-path: circle(1.5em at calc(100% - 15px - 20px) 30px);
 	}
 	to {
 		clip-path: circle(200%);
 	}
 }
-.container-nav.remove {
+.container-nav.close {
 	animation: CirclePathClose 1s ease-in-out forwards;
 }
 @keyframes CirclePathClose {
@@ -29,7 +30,7 @@
 		clip-path: circle(200%);
 	}
 	to {
-		clip-path: circle(0 at 100% 0);
+		clip-path: circle(0 at calc(100% - 15px - 20px) 30px);
 	}
 }
 .container-nav .nav {
@@ -104,6 +105,9 @@
 		height: 100%;
 		background-color: transparent;
 		animation: none;
+	}
+	.container-nav.remove {
+		animation: none
 	}
 	.container-nav .nav {
 		flex-direction: row;

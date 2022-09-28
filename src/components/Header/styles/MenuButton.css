@@ -1,10 +1,51 @@
+.menu-button {
+	position: relative;
+	align-self: flex-end;
+	z-index: 2000;
+}
 .menu-button .button {
 	display: flex;
-	justify-content: center;
+	justify-content: flex-end;
 	align-items: center;
 	background-color: transparent;
 	border: none;
 	cursor: pointer;
+}
+.menu-button .button .menu-icon {
+	animation: show-svg 1s ease-in-out forwards;
+}
+.menu-button .button .close-icon {
+	animation: show-svg 1s ease-in-out forwards;
+}
+
+.menu-button .button .menu-icon.remove {
+	animation: hidden-svg 1s ease-in-out forwards;
+}
+.menu-button .button .close-icon.remove {
+	animation: hidden-svg 1s ease-in-out forwards;
+}
+
+.menu-button .button div:nth-child(2) {
+	position: absolute;
+}
+@keyframes show-svg {
+	from {
+		transform: scale(0);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+@keyframes hidden-svg {
+	from {
+		transform: scale(1);
+		opacity: 1;
+	}
+	to {
+		transform: scale(0)rotate(-360deg);
+		opacity: 1;
+	}
 }
 .menu-button .button svg {
 	font-size: 3em;
@@ -13,4 +54,7 @@
 .menu-button .button:hover > svg {
 	transition: all .3s ease-in;
 	color: var(--cl-primary);
+}
+.menu-button .button:active > svg {
+	color: var(--cl-primary-light);
 }
